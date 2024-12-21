@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/admin.css" />
+
+
+  <title>Admin Dashboard</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    /* th {
+      background-color: #f2f2f2;
+    } */
+    .filter-container {
+      margin: 20px 0;
+    }
+    .filter-container input {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header-section d-flex justify-content-between align-items-center px-4 py-3" style="background-color: #7335b7; color: white;">
+    <div class="page-title">
+      <h1>Admin Dashboard</h1>
+    </div>
+    <div class="exit-button">
+      <a href="logout.html" class="btn btn-light">Exit</a>
+    </div>
+  </header>
+  
+  <div class="filter-container">
+    <label for="filterName">Name:</label>
+    <input type="text" id="filterName" placeholder="Search by name...">
+    
+    <label for="filterDate">Date:</label>
+    <input type="date" id="filterDate">
+    
+    <label for="filterCompany">Production Company:</label>
+    <input type="text" id="filterCompany" placeholder="Search by company...">
+    
+    <button id="applyFilters">Apply Filters</button>
+    <button id="clearFilters">Clear Filters</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Eircode</th>
+        <th>Production Company</th>
+        <th>Artist Stage Name</th>
+        <th>Tour</th>
+        <th>Date</th>
+        <th>Expected Audience</th>
+      </tr>
+    </thead>
+    <tbody id="bookingsTable"></tbody>
+  </table>
+
+
+
+
+
+  <script>
+    let bookingsData = [];
+
+    // Fetch bookings data from the server
+    fetch('/bookings')
+      .then(response => response.json())
+      .then(data => {
+        bookingsData = data;
+        populateTable(bookingsData);
+      })
+      .catch(err => console.error('Error fetching bookings:', err));
+
+    // Populate the table with data
+    function populateTable(data) {
+      const table = document.getElementById('bookingsTable');
+      table.innerHTML = ''; // Clear existing rows
+      data.forEach(booking => {
+        const row = table.insertRow();
+        Object.values(booking).forEach(value => {
+          const cell = row.insertCell();
+          cell.textContent = value;
+        });
+      });
+    }
+
+    // Apply filters to the table
+    function applyFilters() {
+      const nameFilter = document.getElementById('filterName').value.toLowerCase();
+      const dateFilter = document.getElementById('filterDate').value;
+      const companyFilter = document.getElementById('filterCompany').value.toLowerCase();
+
+      const filteredData = bookingsData.filter(booking => {
+        const fullName = `${booking.first_name} ${booking.last_name}`.toLowerCase();
+        const matchesName = nameFilter ? fullName.includes(nameFilter) : true;
+        const matchesDate = dateFilter ? booking.date === dateFilter : true;
+        const matchesCompany = companyFilter ? booking.production_company.toLowerCase().includes(companyFilter) : true;
+        return matchesName && matchesDate && matchesCompany;
+      });
+
+      populateTable(filteredData);
+    }
+
+    // Clear filters and reset the table
+    function clearFilters() {
+      document.getElementById('filterName').value = '';
+      document.getElementById('filterDate').value = '';
+      document.getElementById('filterCompany').value = '';
+      populateTable(bookingsData);
+    }
+
+    // Event listeners for filter buttons
+    document.getElementById('applyFilters').addEventListener('click', applyFilters);
+    document.getElementById('clearFilters').addEventListener('click', clearFilters);
+  </script>
+
+
+
+</body>
+<footer class="footer-container">
+  <div class="container text-center">
+    <p>&copy; <span id="displayYear"></span> Admin Dashboard. All Rights Reserved.</p>
+  </div>
+</footer>
+</html>

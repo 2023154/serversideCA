@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.header-section {
+    background-color: #7335b7;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+  
+  .page-title h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .exit-button .btn {
+    color: #7335b7;
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .exit-button .btn:hover {
+    background-color: #5a2a8f;
+    color: white;
+  }
+  
+
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  color: #7335b7;
+  text-align: center;
+}
+
+.form-container input, .form-container button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+input {
+  border: 1px solid #ccc;
+}
+
+input:focus {
+  border-color: #7335b7;
+  box-shadow: 0 0 5px rgba(115, 53, 183, 0.5);
+}
+
+button {
+  background-color: #7335b7;
+  color: white;
+  border: none;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #5a2a8f;
+}

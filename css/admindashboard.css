@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #0c0c0c;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.header-section {
+  background-color: #7335b7;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.page-title h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.exit-button .btn {
+  color: #7335b7;
+  background-color: white;
+  border: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.exit-button .btn:hover {
+  background-color: #5a2a8f;
+  color: white;
+}
+
+
+.services-section {
+  background-color: #ffffff;
+  padding: 30px 15px;
+}
+
+.services-section .service-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.services-section .service-card:hover {
+  transform: scale(1.05);
+}
+
+.services-section .service-card h5 {
+  color: #7335b7;
+  font-weight: bold;
+}
+
+.services-section .btn-primary {
+  background-color: #7335b7;
+  border-color: #7335b7;
+}
+
+.services-section .btn-primary:hover {
+  background-color: #5a2a8f;
+}
+
+.footer-container {
+  background-color: #7335b7;
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+}

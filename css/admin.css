@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+
+/* General Layout */
+
+html, body{height: 100%;
+margin: 0;
+display: flex;
+flex-direction: column;}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f9f9f9;
+
+
+  }
+  
+
+
+.header-section {
+    background-color: #7335b7;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+  
+  .page-title h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .exit-button .btn {
+    color: #7335b7;
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .exit-button .btn:hover {
+    background-color: #5a2a8f;
+    color: white;
+  }
+  
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+h2 {
+  color: #7335b7;
+  text-align: center;
+}
+
+button {
+  background-color: #7335b7;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #5a2a8f;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.table th {
+  background-color: #7335b7;
+  color: white;
+}
+
+/* Footer Styles */
+.footer-container {
+    background-color: #7335b7;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 26%;
+  }
+  
+  .footer-container p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .footer-container a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-container a:hover {
+    text-decoration: underline;
+  }
+
+  
