@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/admin.css" />
-
-
   <title>Admin Dashboard</title>
   <style>
     table {
@@ -20,9 +17,9 @@
       padding: 10px;
       text-align: left;
     }
-    /* th {
+    th {
       background-color: #f2f2f2;
-    } */
+    }
     .filter-container {
       margin: 20px 0;
     }
@@ -32,14 +29,7 @@
   </style>
 </head>
 <body>
-  <header class="header-section d-flex justify-content-between align-items-center px-4 py-3" style="background-color: #7335b7; color: white;">
-    <div class="page-title">
-      <h1>Admin Dashboard</h1>
-    </div>
-    <div class="exit-button">
-      <a href="logout.html" class="btn btn-light">Exit</a>
-    </div>
-  </header>
+  <h1>Admin Dashboard</h1>
   
   <div class="filter-container">
     <label for="filterName">Name:</label>
@@ -74,10 +64,6 @@
     </thead>
     <tbody id="bookingsTable"></tbody>
   </table>
-
-
-
-
 
   <script>
     let bookingsData = [];
@@ -133,13 +119,5 @@
     document.getElementById('applyFilters').addEventListener('click', applyFilters);
     document.getElementById('clearFilters').addEventListener('click', clearFilters);
   </script>
-
-
-
 </body>
-<footer class="footer-container">
-  <div class="container text-center">
-    <p>&copy; <span id="displayYear"></span> Admin Dashboard. All Rights Reserved.</p>
-  </div>
-</footer>
 </html>

@@ -82,34 +82,17 @@
                     <img src="images/s2.png" alt="Service 2" class="img-fluid">
                   </div>
                   <div class="details">
-                    <h5>Control bookings</h5>
-                    <p>Here you can see the bookings</p>
-                    <a href="form.html" class="btn btn-primary">BOOK</a>
+                    <h5>Admin Control bookings</h5>
+                    <p>Here you can see all the bookings</p>
+                    <a id="accessdenied" class="btn btn-primary">BOOK</a>
                   </div>
+                  
+                    <!-- <button id="accessdenied" class="btn btn-light">Login</button> -->
+                 
                 </div>
               </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="service-card">
-                  <div class="img-container text-center">
-                    <img src="images/s3.png" alt="Service 3" class="img-fluid">
-                  </div>
-                  <div class="details">
-                    <h5>We are a company that make bookings.</h5>
-                    <p>About us</p>
-                    <a href="form.html" class="btn btn-primary">BOOK</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="service-card">
-                  <div class="img-container text-center">
-                    <img src="images/s4.png" alt="Service 4" class="img-fluid">
-                  </div>
-                  <div class="details">
-                    <h5>here you can contact us.</h5>
-                    <p>contact</p>
-                    <a href="form.html" class="btn btn-primary">BOOK</a>
-                  </div>
+              
+              
         
           </div>
         </div>
@@ -146,6 +129,7 @@
     document.getElementById('displayYear').textContent = new Date().getFullYear();
 
     // Modal functionality
+    const accessdenied = document.getElementById('accessdenied');
     const loginButton = document.getElementById('loginButton');
     const loginModal = document.getElementById('loginModal');
     const modalOverlay = document.getElementById('modalOverlay');
@@ -153,6 +137,10 @@
     const loginForm = document.getElementById('loginForm');
 
     // Open modal
+    accessdenied.addEventListener('click', () => {
+      loginModal.style.display = 'block';
+      modalOverlay.style.display = 'block';
+    });
     loginButton.addEventListener('click', () => {
       loginModal.style.display = 'block';
       modalOverlay.style.display = 'block';

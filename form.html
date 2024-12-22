@@ -7,68 +7,44 @@
   <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/bootstrap.css">
 </head>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concert Booking Form</title>
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
 <body>
-  <header class="header-section d-flex justify-content-between align-items-center px-4 py-3" style="background-color: #7335b7; color: white;">
-    <div class="page-title">
-      <h1>Admin Dashboard</h1>
-    </div>
-    <div class="exit-button">
-      <button id="exitButton" class="btn btn-light">Exit</button>
-    </div>
+  <header class="header-section">
+    <h1>Admin Dashboard</h1>
   </header>
 
-<main>
-  <section class="form-section">
-    <div class="form-container">
-      <h2>Concert Booking Form</h2>
-      <form id="bookingForm">
-        <div>
-          <input type="text" id="firstName" placeholder="First Name" required />
-        </div>
-        <div>
-          <input type="text" id="lastName" placeholder="Last Name" required />
-        </div>
-        <div>
+  <main>
+    <section>
+      <div>
+        <h2>Concert Booking Form</h2>
+        <form id="bookingForm" method="POST" action="/submit">
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" required />
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name" required />
           <input type="number" id="age" name="age" min="18" max="100" placeholder="Age" required />
-        </div>
-        <div>
           <input type="email" id="email" name="email" placeholder="E-mail" required />
-        </div>
-        <div>
-          <input type="text" id="phone" name="phone" maxlength="10" required placeholder="Phone Number" />
-        </div>
-        <div>
+          <input type="text" id="phone" name="phone" maxlength="10" placeholder="Phone Number" required />
           <input type="text" id="eircode" name="eircode" maxlength="7" placeholder="Eircode" required />
-        </div>
-        <div>
-          <input type="text" id="productionCompany" name="productionCompany" maxlength="20" placeholder="Production Company" required />
-        </div>
-        <div>
-          <input type="text" id="artistStageName" name="artistStageName" maxlength="50" required placeholder="Artist Name" />
-        </div>
-        <div>
-          <input type="text" id="tour" name="tour" maxlength="50" placeholder="Tour" required />
-        </div>
-        <div>
+          <input type="text" id="productionCompany" name="productionCompany" placeholder="Production Company" required />
+          <input type="text" id="artistStageName" name="artistStageName" placeholder="Artist Name" required />
+          <input type="text" id="tour" name="tour" placeholder="Tour" required />
           <input type="date" id="date" name="date" required />
-        </div>
-        <div>
-          <input type="number" id="expectedAudience" name="expectedAudience" min="2000" max="60000" required placeholder="Expected Audience" />
-        </div>
-        <div>
+          <input type="number" id="expectedAudience" name="expectedAudience" placeholder="Expected Audience" required />
           <button type="submit">Send</button>
-        </div>
-      </form>
-    </div>
-  </section>
-</main>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
 
-<footer class="footer-container bg-dark text-white py-4">
-  <div class="container">
-    <p class="mb-0 text-center">&copy; <span id="displayYear"></span> Admin Dashboard. All Rights Reserved.</p>
-  </div>
-</footer>
 
+<script src="express.js"></script>
 <script>
   // Display the current year in the footer
   document.getElementById('displayYear').textContent = new Date().getFullYear();
